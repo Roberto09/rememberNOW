@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block navbar%}
+{% endblock %}
+{% block contenido %}
+<div id="titulo-index">
+<h4>rememberNOW</h4>
+<h5>Login</h5>
+
+</div>
+
+<div id="form-div">
+
+<form id="login-form"method="post">
+	{% csrf_token %}
+	 <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+        		<label for="username">Username:</label>
+        		<input class="form-control" type="text" name="username">
+    	   </div>
+        </div>
+    </div>    
+    <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+        		<label for="username">Password:</label>
+        		<input class="form-control" type="password" name="password">
+    	   </div>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div ind="editar"class="form-group">
+                <input class="btn btn-primary" type="submit" value="Ingresar">
+                <a href="#">Forgot my password |</a>
+                <a href="{% url 'usuarios:user_create' %}">Create User</a>
+    	   </div>
+        </div>
+    </div>
+</form>
+</div>
+
+{% endblock %}

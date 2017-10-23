@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% block contenido %}
+
+<div class="div-form3">
+	<div class="titulo-nota-container">
+			<h3 class="titulo-pagina">Personal Notes</h3>
+
+		<div id="div-crear-nota">
+		<a id="boton-crear-nota"class="btn btn-warning" href="{% url 'notas:crear_nota_ind' %}">New Note</a>
+		</div>
+	</div>
+
+	{% for Nota in Notas %}
+
+	<div class="form-container">
+		<h4 class="titulo-nota">Nota: {{Nota.titulo}}</h4>
+
+		<p class="cont-nota">{{Nota.contenido}}</p>
+
+		<div class="botones-container">
+		<a class="btn btn-danger" href="{% url 'notas:borrar_nota_ind' Nota.id %}">-Delete-</a>
+		<a class="btn btn-warning" href="{% url 'notas:editar_nota_ind' Nota.id %}">-Edit-</a>
+		</div>
+
+	</div>
+	{% endfor %}
+
+	<a href="{% url 'notas:crear_nota_ind' %}"class="form-container-new">
+		<h4 class="titulo-nota-new">New Note</h4>
+
+		<p class="cont-nota-new">+</p>
+
+
+	</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+
+<div id="prueba">
+<form id= "crear-grupo-form"method='post'>
+{% csrf_token %}
+{{form.as_p}}
+
+<div id="boton-form">
+<button class= "btn btn-warning" type="submit">Create Group</button>
+</div>
+
+
+</div>
+</form>
+{% endblock %}

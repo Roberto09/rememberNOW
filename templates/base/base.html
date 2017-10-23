@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewpost" content="width=device-width; maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+	{% block title %} <title>rememberNOW</title> {% endblock %}
+</head>
+<body>
+
+<div class="container">
+	{% block navbar %}
+        <nav>
+            <div class="logo-section">
+                <a href="{% url 'login'%}"class="logo">rememberNOW</a>
+                <button class="hb-button"><i class="fa fa-bars"></i></button>
+            </div>
+            <ul>
+                <li id="menu-movil"><a href="{% url 'logout' %}">Logout</a></li>
+                <li id="menu-movil"><a href="{% url 'amigos:lista_amigos' %}">Firends</a></li>
+                <li id="menu-movil"><a href="{% url 'grupos:ver_grupos' %}">Groups</a></li>
+                <li id="menu-movil"><a href="{% url 'notas:notas_grup' %}">Group Notes</a></li>
+                <li id="menu-movil"><a href="{% url 'notas:notas_ind' %}">My Notes</a></li>
+                
+            </ul>
+        </nav>
+
+
+
+
+	{% endblock %}
+
+<div class="rest-body-container">
+	{% block contenido %}
+	<h5>Este es el blocque del contenido del archivo base</h3>
+	{% endblock %}
+</div>
+</div>
+
+
+	
+</body>
+</html>

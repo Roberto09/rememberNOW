@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% block contenido %}
+
+<div class="div-form3">
+	<div class="titulo-nota-container">
+			<h3 class="titulo-pagina">Group Notes</h3>
+
+		<div id="div-crear-nota">
+		<a id="boton-crear-nota"class="btn btn-default" href="{% url 'grupos:ver_grupos' %}">New Note</a>
+		</div>
+	</div>
+
+	{% for Nota in Notas %}
+
+	<div class="form-container">
+		<h4 class="titulo-nota">Note: {{Nota.titulo}}</h4>
+		<h6 class="otro-nota">Group: {{Nota.grupo.Nombre}}</h6>
+		<h6 class="otro-nota">Note Creator: {{Nota.creador_nota.username}}</h6>
+
+		<p class="cont-nota">{{Nota.contenido}}</p>
+
+		<div class="botones-container">
+		<a class="btn btn-danger" href="{% url 'notas:borrar_nota_grup' Nota.id %}">-Delete-</a>
+		<a class="btn btn-warning" href="{% url 'notas:editar_nota_grup' Nota.id %}">-Edit-</a>
+		</div>
+
+
+	</div>
+
+	{% endfor %}
+	<a href="{% url 'grupos:ver_grupos' %}"class="form-container-new-grup">
+		<h4 class="titulo-nota-new-grup">New Note</h4>
+
+		<p class="cont-nota-new-grup">+</p>
+
+
+	</a>
+
+
+</div>
+
+{% endblock %}

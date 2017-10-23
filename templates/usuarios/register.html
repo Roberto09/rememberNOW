@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+
+{% block navbar%}
+{% endblock %}
+
+{% block contenido %}
+
+<h4 id= "titulo-registrar">Create User<h4>
+
+<div id="register-form-container">
+
+
+<form id="register-form" method='post'>
+	{% csrf_token %}
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.first_name.name}}">{{form2.first_name.label}}</label>
+				{{form2.first_name}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.last_name.name}}">{{form2.last_name.label}}</label>
+				{{form2.last_name}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.username.name}}">{{form2.username.label}}</label>
+				{{form2.username}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<p>*min 8 char (letters and numbers)*</p>
+				<label>Password: </label>
+				{{form2.password1}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label >Confirm Password: </label>
+				{{form2.password2}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form2.email.name}}">{{form2.email.label}}</label>
+				{{form2.email}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.pregunta_app.name}}">{{form.pregunta_app.label}}</label>
+				{{form.pregunta_app}}
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">Create User</button>
+			</div>
+		</div>
+
+</form>
+</div>
+
+
+{% endblock %}

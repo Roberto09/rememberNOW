@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+
+<form id="form-buscar-usuario" method='post'>
+{% csrf_token %}
+	 <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="form-group">
+        		<label for="busqueda_usuario">Search by Username:  </label>
+        		<input class="form-control" type="text" name="busqueda_usuario">
+    	   </div>
+        </div>
+    </div>  
+	<button id="boton-buscar" class="btn btn-warning" type="submit">Search!</button>
+</form>
+
+
+
+<table id="tabla-usuarios" class="table table-bordered">
+	<thead>
+		<tr>
+			<td>username</td>
+			<td>nombre</td>
+			<td>Solicitud de amistad</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if users %}
+		{% for user in users %}
+		<tr>
+			<td>{{user.username}}</td>
+			<td>{{user.first_name}} {{user.last_name}}</td>
+			<td><a class="btn btn-primary" href="{% url 'amigos:agregar_amigos' user.pk %}">Añadir Amigo </a></td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1 id="not-users">There aren´t users with that username!</h1>
+		{% endif %}
+
+{% endblock %}
+
+agregar_amigos

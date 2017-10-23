@@ -1,0 +1,527 @@
+/*modificacion generales */
+
+.btn{
+	font-size: 12px;
+	padding: 4px 6px;
+}
+
+body{
+	background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right; 
+	background-size: cover;
+	background-color: #161616;
+	color: white;
+}
+
+.container
+{
+	width:100%;
+	margin-right: 0px;
+	margin-left: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+
+}
+
+.rest-body-container
+{
+	margin-top: 68px;
+	max-width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #437ac1;
+  text-decoration: none;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+/*------------Ediciones individuales------------*/
+
+/*nav bar*/
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+header{
+    width: 100%;
+    height: auto;
+}
+
+nav{
+    background: black;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    box-shadow: -2px -7px 47px 9px rgba(0,0,0,0.35);
+    -moz-box-shadow: -2px -7px 47px 9px rgba(0,0,0,0.35);
+    -webkit-box-shadow: -2px -7px 47px 9px rgba(0,0,0,0.35);
+}
+
+.logo-section{
+    float: left;
+    padding: 18px;
+}
+
+.hb-button{
+    float: right;
+    background: #222;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+nav a{
+    text-decoration: none;
+    color: #6ac944;
+    font-size: 20px;
+    padding: 5px;
+}
+
+nav ul{
+    overflow: hidden;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: max-height 0.5s;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    -ms-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+}
+
+nav ul li{
+    float: right;
+    display: inline-block;
+    padding: 20px;
+}
+
+li > a{
+    position: relative;
+    color: #939393;
+    text-decoration: none;
+    
+}
+
+li > a:hover{
+    color: #939393;
+}
+
+li > a:before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+li > a:hover:before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+@media screen and (max-width: 850px){
+    .logo-section{
+        float: none;
+    }
+    nav ul{
+        background: black;
+        max-height: 0;
+        width: 100%;
+    }
+    nav ul.show{
+        max-height: 20em;
+    }
+    nav ul li{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+    }
+    .hb-button{
+        display: inline;
+    }
+    #menu-movil{
+	border-top-width: 2px;
+	border-top-color: white;
+	border-top-style: solid;
+	}
+
+}
+
+/*notas_ind template*/
+
+#div-crear-nota
+{
+	display: inline-grid;
+	padding: 10px;
+	padding-bottom:30px;
+	text-align: center;
+}
+
+#boton-crear-nota
+{
+	border-color: #437ac1;
+	border-width: 2px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	width:130px;
+	height: 40px;
+}
+
+.div-form3{
+	width:  100%;
+	text-align: center;
+}
+
+.form-container
+{
+	display: inline-grid;
+	width: 300px;
+    border-style: solid;
+    border-color: #0c230c;
+    border-bottom-color: #ff9f19;
+    border-width: 3px;
+    margin-bottom: 10px;
+	border-radius: 7px;
+	padding-bottom: 10px;
+	background-color: rgba(0,0,0,.5);
+	color:  #dbdbdb;
+}
+
+.form-container-new
+{
+	display: inline-grid;
+	width: 300px;
+	height: 200px;
+	min-width: 200px;
+    border-style: dashed;
+    border-color: white;
+    border-width: 3px;
+    margin-bottom: 10px;
+	border-radius: 7px;
+	background-color: rgba(0,0,0,.5);
+	color:  #dbdbdb;
+	text-align: center;
+}
+
+.cont-nota-new
+{
+	text-align: center;
+	padding-left: 20px;
+	border-style: solid;
+	border-color: #32516d;
+	border-radius: 7px;
+	padding: 7px;
+	font-size: 75px;
+	text-align: center;
+
+}
+
+.titulo-nota-new
+{
+	text-align: center;
+	padding-left: 20px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #32516d;
+	border-radius: 7px;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 8px;
+
+}
+
+
+.titulo-nota
+{
+	text-align: left;
+	padding-left: 20px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #437ac1;
+	border-radius: 7px;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 8px;
+
+}
+
+.titulo-nota-container
+{ 
+	width:100%;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+
+.cont-nota
+{
+	text-align: left;
+	padding-left: 20px;
+	border-style: solid;
+	border-color: #33527a;
+	border-radius: 7px;
+	padding: 7px;
+
+}
+.botones-container
+{
+	text-align: right;
+	padding-right: 10px;
+}
+
+.titulo-pagina
+{
+	display: inline-grid;
+	margin: 0px;
+	color: #d1d1d1;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size: 35px;
+	font-weight: bold;
+	padding-right:10px;
+	margin-top: 10px;
+}
+
+
+/* login/index template */
+#titulo-index{
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	}
+
+
+/* regitster template */
+#titulo-registrar{
+	text-align: center;
+	margin-top: 100px;
+	font-size: 20px;
+}
+
+
+/* crear_grupos template */
+#prueba{
+padding-top: 30px;
+height:auto; 
+margin:0 auto;
+}
+
+
+#crear-grupo-form{
+	max-width : 500px;
+	font-size: 17px;
+	color: white;
+	margin:0 auto;
+	margin-top: 30px;
+	border-style: solid;
+    border-color: #33527a;
+    border-bottom-color: #ff9f19;
+    border-width: 3px;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: rgba(0,0,0,.5);
+
+}
+
+#boton-form{
+	text-align: right;
+}
+
+
+/* notas_grup template */
+.otro-nota{
+	text-align: left;
+	padding-left: 20px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #409661;
+	border-radius: 7px;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+
+}
+.form-container-new-grup
+{
+	display: inline-grid;
+	width: 300px;
+	height: 290px;
+	min-width: 200px;
+    border-style: dashed;
+    border-color: white;
+    border-width: 3px;
+    margin-bottom: 10px;
+	border-radius: 7px;
+	background-color: rgba(0,0,0,.5);
+	color:  #dbdbdb;
+	text-align: center;
+}
+
+
+.cont-nota-new-grup
+{
+	height: 200px;
+	text-align: center;
+	padding-left: 20px;
+	border-style: solid;
+	border-color: #32516d;
+	border-radius: 7px;
+	padding: 7px;
+	font-size: 75px;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.titulo-nota-new-grup
+{
+	text-align: center;
+	padding-left: 20px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #32516d;
+	border-radius: 7px;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 8px;
+
+}
+
+
+
+
+
+/* ver_grupos template */
+#integrantes-container{
+	padding-left: 20px;
+	border-style: solid;
+	border-color: #474747;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+
+}
+
+.grupo-container
+{
+	display: inline-grid;
+	width: 250px;
+	min-width: 200px;
+    border-style: solid;
+    border-color: #353599;
+    border-bottom-color: #52c440;
+    border-width: 3px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+	padding-bottom: 10px;
+	background-color: rgba(11, 17, 35,.5);
+	color:  white;
+	margin-right: 7px;
+	margin-left: 7px;
+}
+#integrantes-titulo{
+	font-weight: bold;
+}
+.botones-container-grupo{
+	text-align: center;
+}
+
+
+
+.otro-grupo{
+	padding-left: 20px;
+	border-style: solid;
+	border-color: #474747;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+
+.titulo-grupo{
+	font-weight: bold;
+	padding-left: 20px;
+	border-style: solid;
+	border-color: #d1d1d1;
+	padding: 7px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+/*amigos template*/
+#tabla_amigos{
+	background-color: rgba(11, 17, 35,.5);
+	max-width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.table-top{
+	font-weight: bold;
+	text-align: center;
+}
+#titulo-amigos{
+	text-align: center;
+	margin-top: 100px;
+}
+#boton-buscar-amigos{
+text-align: center;
+margin-bottom: 30px;
+}
+#boton-amigos{
+	font-size: 17px;
+}
+
+/*buscar-amigos template*/
+#boton-buscar{
+	font-size: 15px;
+	margin-left: 26%;
+}
+#tabla-usuarios{
+	margin-top: 30px;
+	background-color: rgba(11, 17, 35,.5);
+	max-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#form-buscar-usuario{
+	margin-top: 100px;
+}
+#not-users{
+	text-align: center;
+}

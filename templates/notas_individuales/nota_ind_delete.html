@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+
+<form method="post">
+{% csrf_token %}
+<h3>Desea Elminar la nota?{{object.titulo}}</h3>
+<button class="btn btn-danger" type="submit">Si, eliminar</button>
+<a href="{% url 'notas:notas_ind' %}">No, gracias</a>
+
+</form>
+
+
+{% endblock %}

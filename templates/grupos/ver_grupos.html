@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% block contenido %}
+
+<div class="div-form3">
+	<div class="titulo-nota-container">
+			<h3 class="titulo-pagina">My Groups</h3>
+
+		<div id="div-crear-nota">
+		<a id="boton-crear-nota"class="btn btn-default" href="{% url 'grupos:crear_grupos' %}">New Group</a>
+		</div>
+	</div>
+
+	{% for grupo in Grupos %}
+
+	<div class="grupo-container">
+		<h4 class="titulo-grupo">Group: {{grupo.Nombre}}</h4>
+		<h6 class="otro-grupo">Creator: {{grupo.Creador_Grupo.username}}</h6>
+		<h6 class="otro-grupo">Description: {{grupo.Descripcion}}</h6>
+
+		<div id="integrantes-container">
+		<h5 id="integrantes-titulo">Members:</h5>
+		{% for integrante in grupo.integrantes.all %}
+		<p>{{integrante.username}}</p>
+		{% endfor %}
+		</div>
+
+		<div class="botones-container-grupo">
+		<a class="btn btn-danger" href="{% url 'notas:crear_nota_grup' grupo.id %}">Create Group Note</a>
+		</div>
+
+
+	</div>
+
+	{% endfor %}
+</div>
+
+{% endblock %}
