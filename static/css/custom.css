@@ -525,3 +525,8 @@ margin-bottom: 30px;
 #not-users{
 	text-align: center;
 }
+
+/*pass view*/
+.form-control, input{
+	color: black;
+}
