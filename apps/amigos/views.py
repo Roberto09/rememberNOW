@@ -26,9 +26,14 @@ def BuscarAmigos(request, userentry='default'):
 def AgregarAmigos(request, id_usuario):
 	amigo=User.objects.get(pk=id_usuario)
 	if request.method=='POST':
-		id_actual_usuario=request.user.pk
+		actual_user=request.user
+		id_actual_usuario=actual_user.pk
 		actual_usuario=Usuario.objects.get(propiedades_usuario=id_actual_usuario)
 		actual_usuario.amigos.add(amigo)
+
+		actual_amigo=Usuario.objects.get(propiedades_usuario=(amigo.pk))
+		actual_amigo.amigos.add(actual_user)
+
 		return redirect('notas:notas_ind')
 	return render(request, 'amigos/agregar_amigo.html', {'amigo':amigo})
 
