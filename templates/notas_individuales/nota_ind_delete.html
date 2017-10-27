@@ -4,9 +4,9 @@
 
 <form method="post">
 {% csrf_token %}
-<h3>Desea Elminar la nota?{{object.titulo}}</h3>
-<button class="btn btn-danger" type="submit">Si, eliminar</button>
-<a href="{% url 'notas:notas_ind' %}">No, gracias</a>
+<h3>Do you want to delete the note?: {{object.titulo}}</h3>
+<button class="btn btn-danger" type="submit">Yes, delete</button>
+<a href="{% url 'notas:notas_ind' %}">No, thanks</a>
 
 </form>
 

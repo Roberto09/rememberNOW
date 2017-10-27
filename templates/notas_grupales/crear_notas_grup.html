@@ -1,10 +1,10 @@
 {% extends 'base/base.html' %}
 
 {% block contenido %}
-<h4>Crear Nota Grupal</h4>
+<h4>Create Group Note</h4>
 <form method='post'>
 {% csrf_token %}
 {{form.as_p}}
-<button type="submit">Guardar Nota Grupal</button>
+<button type="submit">Save Group Note</button>
 </form>
 {% endblock %}
