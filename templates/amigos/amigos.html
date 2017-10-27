@@ -1,10 +1,10 @@
 {% extends 'base/base.html' %}
 {% block contenido %}
 
-<h4 id="titulo-amigos">Mis Amigos</h4>
+<h4 id="titulo-amigos">My friends</h4>
 
 <div id="boton-buscar-amigos">
-<a id="boton-amigos" class="btn btn-warning" href="{% url 'amigos:buscar_amigos' %}">Buscar/Agregar Amigos</a>
+<a id="boton-amigos" class="btn btn-warning" href="{% url 'amigos:buscar_amigos' %}">Find/Add Friends</a>
 </div>
 
 
@@ -25,7 +25,7 @@
 		</tr>
 		{% endfor %}
 		{% else %}
-		<h1>No tienes amigos aun.</h1>
+		<h1>You still have no firends.</h1>
 		{% endif %}
 
 
